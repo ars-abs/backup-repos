@@ -5,6 +5,9 @@ if [ -z "$1" ]; then
     exit 1
 fi
 
+# eval "$(ssh-agent -s)"
+# echo <passphrase> | ssh-add ~/.ssh/id_rsa
+
 cd "$1"
 
 for dir in */ ; do
