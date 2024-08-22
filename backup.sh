@@ -16,10 +16,11 @@ for dir in */ ; do
         cd "$dir" || exit
 
         echo "Pulling the latest changes from remote origin..."
-        git pull origin
+        git fetch origin --tags
 
         echo "Pushing changes to backup remote..."
-        git push backup
+        git push backup refs/remotes/origin/*:refs/heads/*
+        git push backup --tags
 
         cd ..
     else
